@@ -13,9 +13,9 @@ int main(void)
 	while(1)
 	{
 		if(PINB & 0b00000010)//02
-		PORTC=PORTC|0b01000000;//40
+		PORTC=PORTC|0b01000000;//40 LED will blink
 		else
-		PORTC=PORTC&0b10111111;//bf
+		PORTC=PORTC&0b10111111;//bf LED will be off
 	}
 	return(0);
 }
