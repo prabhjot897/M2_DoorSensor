@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ * Created: 4/21/2022 2:09:43 PM
+ *  Author: sidhu
+ */ 
+
+#include <avr/io.h>
+int main(void)
+{
+	DDRB=DDRB&0b11111101;//to define port B pin as Input pin(fd)
+	DDRC=DDRC|0b01000000;// to define port C pin as output pin(40)  
+	while(1)
+	{
+		if(PINB & 0b00000010)//02
+		PORTC=PORTC|0b01000000;//40
+		else
+		PORTC=PORTC&0b10111111;//bf
+	}
+	return(0);
+}
